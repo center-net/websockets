@@ -146,6 +146,13 @@ return [
             'database' => 0,
         ],
 
+        'broadcast' => [
+            'host' => env('REDIS_LOCAL_HOST', '127.0.0.1'),
+            'password' => env('REDIS_LOCAL_PASSWORD', null),
+            'port' => env('REDIS_LOCAL_PORT', 6379),
+            'database' => 0,
+        ],
+
     ],
 
 ];

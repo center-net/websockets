@@ -23,11 +23,11 @@ return [
      */
     'apps' => [
         [
-            'id' => env('PUSHER_APP_ID'),
-            'name' => env('APP_NAME'),
-            'key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
-            'path' => env('PUSHER_APP_PATH'),
+            'id' => 'local',
+            'name' => 'Laravel',
+            'key' => 'local',
+            'secret' => 'local',
+            'path' => null,
             'capacity' => null,
             'enable_client_messages' => false,
             'enable_statistics' => true,
@@ -48,7 +48,8 @@ return [
      * Leave this empty if you want to accept requests from all hosts.
      */
     'allowed_origins' => [
-        //
+        'localhost',
+        '127.0.0.1',
     ],
 
     /*
@@ -138,4 +139,10 @@ return [
      * `ChannelManager` interface provided by this package.
      */
     'channel_manager' => \BeyondCode\LaravelWebSockets\WebSockets\Channels\ChannelManagers\ArrayChannelManager::class,
+    'redis' => [
+        'host' => env('LARAVEL_WEBSOCKETS_REDIS_HOST', 'localhost'),
+        'port' => env('LARAVEL_WEBSOCKETS_REDIS_PORT', 6379),
+        'password' => env('LARAVEL_WEBSOCKETS_REDIS_PASSWORD', null),
+        'database' => 0,
+    ],
 ];
