@@ -159,6 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
+        BeyondCode\LaravelWebSockets\WebSocketsServiceProvider::class,
 
         /*
          * Application Service Providers...
