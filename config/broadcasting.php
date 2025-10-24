@@ -32,16 +32,16 @@ return [
 
         'pusher' => [
             'driver' => 'pusher',
-            'key' => 'local',
-            'secret' => 'local',
-            'app_id' => 'local',
+            'key' => env('PUSHER_APP_KEY', 'local'),
+            'secret' => env('PUSHER_APP_SECRET', 'local'),
+            'app_id' => env('PUSHER_APP_ID', 'local'),
             'options' => [
-                'cluster' => 'mt1',
-                'host' => '127.0.0.1',
-                'port' => 6001,
-                'scheme' => 'http',
-                'encrypted' => false,
-                'useTLS' => false,
+                'cluster' => env('PUSHER_APP_CLUSTER', 'mt1'),
+                'host' => env('PUSHER_HOST', '127.0.0.1'),
+                'port' => env('PUSHER_PORT', 6001),
+                'scheme' => env('PUSHER_SCHEME', 'http'),
+                'encrypted' => env('PUSHER_ENCRYPTED', false),
+                'useTLS' => env('PUSHER_USE_TLS', false),
             ],
             'client_options' => [
                 // Guzzle client options: https://docs.guzzlephp.org/en/stable/request-options.html

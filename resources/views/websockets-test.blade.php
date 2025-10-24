@@ -15,14 +15,19 @@
 
     <script>
         // Initialize Pusher
-        const pusher = new Pusher('local', {
-            wsHost: '127.0.0.1',
-            wsPort: 6001,
-            wssPort: 6001,
+        const pusherConfig = {
+            key: '{{ config("broadcasting.connections.pusher.key") }}',
+            wsHost: '{{ config("broadcasting.connections.pusher.options.host") }}',
+            wsPort: {{ config("broadcasting.connections.pusher.options.port") }},
+            wssPort: {{ config("broadcasting.connections.pusher.options.port") }},
             disableStats: true,
             enabledTransports: ['ws', 'wss'],
-            forceTLS: false,
-        });
+            forceTLS: {{ config("broadcasting.connections.pusher.options.useTLS") ? 'true' : 'false' }},
+        };
+
+        console.log('🔧 Pusher Config:', pusherConfig);
+
+        const pusher = new Pusher(pusherConfig.key, pusherConfig);
 
         // Debug: Connection events
         pusher.connection.bind('connecting', function() {
