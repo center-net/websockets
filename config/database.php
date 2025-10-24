@@ -130,20 +130,20 @@ return [
 
         'default' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => 'tls://crisp-hornet-17963.upstash.io',
             'username' => env('REDIS_USERNAME'),
-            'password' => env('REDIS_PASSWORD'),
-            'port' => env('REDIS_PORT', '6379'),
+            'password' => 'AUYrAAIncDJjMWNkMGMzMTM0MGU0NWExYTQzYmM3YzgzNjU0MmQ5OHAyMTc5NjM',
+            'port' => 6379,
             'database' => env('REDIS_DB', '0'),
         ],
 
         'cache' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => 'tls://crisp-hornet-17963.upstash.io',
             'username' => env('REDIS_USERNAME'),
-            'password' => env('REDIS_PASSWORD'),
-            'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_CACHE_DB', '1'),
+            'password' => 'AUYrAAIncDJjMWNkMGMzMTM0MGU0NWExYTQzYmM3YzgzNjU0MmQ5OHAyMTc5NjM',
+            'port' => 6379,
+            'database' => 0,
         ],
 
     ],
